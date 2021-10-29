@@ -31,8 +31,20 @@
         </v-icon>
       </div>
     </div>
+    <!--主页文章-->
+    <v-row class="home-container">
+      <v-col md="9" cols="12">
+        <v-card
+          class="animated zoomIn article-card"
+          style="border-radius: 12px 8px 8px 12px"
+          v-for="(item, index) of articleList"
+          :key="item.id"
+        />
 
 
+      </v-col>
+
+    </v-row>
   </div>
 
 
@@ -46,6 +58,8 @@ export default {
   },
   data: function () {
     return {
+      tip: false,
+      time: "",
       obj: {
         output: "",
         isEnd: false,
@@ -55,7 +69,9 @@ export default {
         type: "rollback",
         backSpeed: 40,
         sentencePause: true
-      }
+      },
+      articleList: [],
+      current: 1
     }
   },
   methods: {
@@ -130,6 +146,21 @@ export default {
   .blog-contact {
     display: none;
   }
+  .home-container {
+    max-width: 1200px;
+    margin: calc(100vh - 48px) auto 28px auto;
+    padding: 0 5px;
+  }
+  .article-card {
+    display: flex;
+    align-items: center;
+    height: 280px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .article-card:hover .on-hover {
+    transform: scale(1.1);
+  }
 }
 
 @media (max-width: 759px) {
@@ -137,6 +168,11 @@ export default {
     font-size: 1.25rem;
     line-height: 2;
   }
+  .home-container {
+    width: 100%;
+    margin: calc(100vh - 66px) auto 0 auto;
+  }
+
 }
 
 .scroll-down {

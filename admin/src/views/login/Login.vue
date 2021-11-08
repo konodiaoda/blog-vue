@@ -18,7 +18,7 @@
               @keyup.enter.native="login">
           </el-input>
         </el-form-item>
-        <!--          密码输入框-->
+        <!--密码输入框-->
         <el-form-item prop="password">
           <el-input
               v-model="loginForm.password"
@@ -102,7 +102,7 @@ export default {
   bottom: 0;
   right: 0;
   left: 0;
-  background: url(https://wjh-myblog.oss-cn-chengdu.aliyuncs.com/img/雪树.jpg) center center /
+  background: url(https://wjh-myblog.oss-cn-chengdu.aliyuncs.com/img/天空.jpg) center center /
     cover no-repeat;
 }
 

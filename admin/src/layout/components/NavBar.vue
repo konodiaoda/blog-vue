@@ -10,7 +10,7 @@
       <el-breadcrumb>
         <el-breadcrumb-item v-for="item of breadcrumbList" :key="item.path">
           <span v-if="item.redirect">{{ item.name }}</span>
-          <router-link v-else :to="item.path">{{ item.name }}</router-link>
+          <span v-else :to="item.path">{{ item.name }}</span>
         </el-breadcrumb-item>
       </el-breadcrumb>
       <!-- 右侧菜单 -->
